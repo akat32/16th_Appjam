@@ -6,6 +6,7 @@ import path from 'path'
 var http = require('http').Server(app);
 var io = require('socket.io')(http)
 import  cors from 'cors'
+import request from 'request'
 import {Users} from './mongo';
 
 require('./func')
@@ -27,3 +28,4 @@ http.listen(PORT, ()=>{
 })
 
 require('./routes/auth')(app, Users, rndstring);
+require('./routes/drink')(app, requrst)

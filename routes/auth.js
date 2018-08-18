@@ -2,6 +2,7 @@ module.exports = auth;
 
 function auth(app, Users, rndstring){
   app.post('/signup', async (req,res)=>{
+    console.log(req.body)
     var user = new Users(req.body);
     user.token = rndstring.generate(25);
     try {
@@ -14,11 +15,13 @@ function auth(app, Users, rndstring){
     res.status(200).json({message : "success!"})
   })
   .post('/signin', async (req,res)=>{
+    console.log(req.body)
     var result = await Users.findOne({"id":req.body.id,"passwd":req.body.passwd});
     if(!result)return res.status(404).json({message : "User Not Found!"})
     return res.status(200).json({token : result.token})
   })
   .get('/auto/:token', async (req,res)=>{
+    console.log(req.body)
     var token = req.params.token;
     var result = await Users.findOne({"token":token});
     if(!result) return res.status(404).json({message : "Not found user"})
