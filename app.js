@@ -28,4 +28,5 @@ http.listen(PORT, ()=>{
 })
 
 require('./routes/auth')(app, Users, rndstring);
-require('./routes/drink')(app, requrst)
+require('./routes/drink')(app, request)
+require('./routes/chat')(app, io, rndstring)
