@@ -1,0 +1,18 @@
+{
+  "name": "16th_appjam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "set": "npm install --save-dev babel-cli babel-preset-es2015 babel-preset-stage-2"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
+  }
+}
